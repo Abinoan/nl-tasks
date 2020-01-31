@@ -21,7 +21,7 @@ class ControllerProjeto extends Controller
      */
     public function __construct()
     {
-        Log->
+        
         $this->middleware("auth");
     }
 
