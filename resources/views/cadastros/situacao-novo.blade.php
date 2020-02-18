@@ -28,7 +28,7 @@
         </form>
 
         <button type="submit" class="btn btn-primary" form="frmNovaSituacao" formaction="/situacoes">Gravar</button>
-        <button type="submit" class="btn btn-primary" form="frmNovaSituacao" formaction="/situacoes/create">Gravar|Novo</button>
-        <button type="cancel" onclick="history.go(-1)" class="btn btn-danger">Voltar</button>
+        <button type="submit" class="btn btn-warning" form="frmNovaSituacao" formaction="/situacoes/create">Gravar|Novo</button>
+        <button type="cancel" onclick="history.go(-1)" class="btn btn-info">Voltar</button>
             
 @stop

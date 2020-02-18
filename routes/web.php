@@ -29,7 +29,11 @@ Route::post('/grupos/create', 'ControllerGrupo@save_new');
 Route::resource('projetos', 'ControllerProjeto'); 
 Route::post('/projetos/create', 'ControllerProjeto@save_new');
 
-# Outras Rotas Redefinidas
+# rotas de cadastro de projetos
+Route::resource('atividades', 'ControllerAtividade'); 
+Route::post('/atividades/create', 'ControllerAtividade@save_new');
+
+# Outras Rotas Redefinidas pela Make:auth
 Auth::routes();
 
 Route::get('/', function() {

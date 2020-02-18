@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Projeto;
 use App\Grupo;
-use Illuminate\Support\Facades\Log;
-
 use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Types\Boolean;
 use phpDocumentor\Reflection\Types\This;
@@ -21,7 +19,6 @@ class ControllerProjeto extends Controller
      */
     public function __construct()
     {
-        
         $this->middleware("auth");
     }
 
@@ -35,9 +32,14 @@ class ControllerProjeto extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $registros = Projeto::paginate(6);
+        $titulo = $request->input('busca_padrao');
+
+        // with('grupo') determina que o laravel traga os registros do relacionamento grupo
+        $registros = Projeto::where('titulo', 'like', "%$titulo%")->with('grupo')->paginate(6);
+       // return $registros;
+
         return view('/projetos', compact('registros') );
     }
 

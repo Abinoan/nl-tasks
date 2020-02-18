@@ -191,23 +191,25 @@ return [
         //     'label'       => 4,
         //     'label_color' => 'success',
         // ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
+        // ['header' => 'account_settings'],
+        // [
+        //     'text' => 'profile',
+        //     'url'  => 'admin/settings',
+        //     // 'url'  => 'password/reset',
+        //     'icon' => 'fas fa-fw fa-user',
+        // ],
 
         [
             'text' => 'change_password',
-            'url'  => 'admin/settings',
+            // 'url'  => 'admin/settings',
+            'url'  => 'password/reset',
             'icon' => 'fas fa-fw fa-lock',
         ],
 
-        [
-            'text'    => 'Cadastros',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
+        // [
+        //     'text'    => 'Cadastros',
+        //     'icon'    => 'fas fa-fw fa-share',
+            // 'submenu' => [
                 [
                     'text' => 'Grupos de Atividade',
                     'url'  => '/grupos',
@@ -224,7 +226,10 @@ return [
                     'text' => 'Clientes',
                     'url'  => '/clientes',
                 ],
-
+                [
+                    'text' => 'Atividades',
+                    'url'  => '/atividades',
+                ],
 
                 // [
                 //     'text'    => 'level_one',
@@ -250,17 +255,14 @@ return [
                 //         ],
                 //     ],
                 // ],
-                [
-                    'text' => 'Atividades',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'Consultas'],
-        [
-            'text'       => 'Atividades no Período',
-            'icon_color' => 'red',
-        ],
+             
+            // ],
+        // ],
+        // ['header' => 'Consultas'],
+        // [
+        //     'text'       => 'Atividades no Período',
+        //     'icon_color' => 'red',
+        // ],
         // [
         //     'text'       => 'warning',
         //     'icon_color' => 'yellow',

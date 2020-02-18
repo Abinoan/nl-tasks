@@ -37,7 +37,7 @@
         </form>
 
         <button type="submit" class="btn btn-primary" form="frmcadastro" formaction="/clientes">Gravar</button>
-        <button type="submit" class="btn btn-primary" form="frmcadastro" formaction="/clientes/create">Gravar|Novo</button>
-        <button type="cancel" onclick="history.go(-1)" class="btn btn-danger">Voltar</button>
+        <button type="submit" class="btn btn-warning" form="frmcadastro" formaction="/clientes/create">Gravar|Novo</button>
+        <button type="cancel" onclick="history.go(-1)" class="btn btn-info">Voltar</button>
             
 @stop

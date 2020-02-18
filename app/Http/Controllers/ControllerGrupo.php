@@ -21,9 +21,10 @@ class ControllerGrupo extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $registros = Grupo::paginate(6);
+        $descricao = $request->input('busca_padrao');
+        $registros = Grupo::where('descricao', 'like', "%$descricao%")->paginate(6);
         return view('/grupos', compact('registros') );
     }
 

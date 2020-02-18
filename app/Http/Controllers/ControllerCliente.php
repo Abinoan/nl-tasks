@@ -7,8 +7,7 @@ use App\Cliente;
 use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Types\Boolean;
 use phpDocumentor\Reflection\Types\This;
-use PhpParser\Node\Stmt\Return_;
-use Illuminate\Validation\Rule;
+
 
 class ControllerCliente extends Controller
 {
@@ -22,9 +21,15 @@ class ControllerCliente extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $registros = Cliente::paginate(6);
+        $nome = $request->input('busca_nome');
+        $cpf_cnpj= $request->input('busca_cpfcnpj');
+
+        $registros = Cliente::nome($nome)
+            ->cpf_cnpj($cpf_cnpj)
+            ->paginate(6);
+            
         return view('/clientes', compact('registros') );
     }
 
@@ -46,6 +51,7 @@ class ControllerCliente extends Controller
      */
     public function save(Request $request, Int $id = 0, $addnew=false)
     {
+        
         $strValidacao['nome'] = 'required|max:100';
         $strValidacao['cpf_cnpj'] = 'required|max:14|unique:clientes,cpf_cnpj,' . ($id>0?$id:'');
         

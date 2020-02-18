@@ -30,6 +30,6 @@
         </form>
 
         <button type="submit" class="btn btn-primary" form="frmcadastro" formaction="/grupos">Gravar</button>
-        <button type="submit" class="btn btn-primary" form="frmcadastro" formaction="/grupos/create">Gravar|Novo</button>
-        <button type="cancel" onclick="history.go(-1)" class="btn btn-danger">Voltar</button>
+        <button type="submit" class="btn btn-warning" form="frmcadastro" formaction="/grupos/create">Gravar|Novo</button>
+        <button type="cancel" onclick="history.go(-1)" class="btn btn-info">Voltar</button>
 @stop

@@ -21,10 +21,11 @@ class ControllerSituacao extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-       // $this->gravar_continuar = 1;
-        $registros = Situacao::paginate(6);
+        $descricao = $request->input('busca_padrao');
+        
+        $registros = Situacao::where('descricao', 'like', "%$descricao%")->paginate(6);
         return view('/situacoes', compact('registros') );
     }
 
@@ -101,10 +102,9 @@ class ControllerSituacao extends Controller
      */
     public function edit($id)
     {
-        
-        $situacao = Situacao::find($id);
-        if(isset($situacao)) {
-            return view('/cadastros.situacao-editar', compact('situacao'));
+        $registro = Situacao::find($id);
+        if(isset($registro)) {
+            return view('/cadastros.situacao-editar', compact('registro'));
         }    
     }
 

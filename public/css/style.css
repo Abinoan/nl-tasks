@@ -19,9 +19,8 @@ input[type=submit], input[type=cancel] {
 }
 
 input[type=submit] {
+  color:#fff;
   background-color: dodgerblue;
-  /* #4CAF50 */
-  color: white;
   width: 100%;
   margin-top: 10px;
 }
