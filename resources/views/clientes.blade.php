@@ -12,7 +12,7 @@
     [
         "cabecalhos" => ['Código', 'Nome', "CPF/CNPJ"],
         'id' => 'id', 
-        "prefixo_rota" => 'clientes', "campos" => ['id', 'nome', 'cpf_cnpj'],
-        "tam_colunas" => [20, 100, 100]
+        "prefixo_rota" => 'clientes', 
+        "campos" => ['id', 'nome', 'cpf_cnpj'],
     ] )
 @endsection

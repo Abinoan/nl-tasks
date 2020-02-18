@@ -39,10 +39,11 @@
 
     @include('layouts.mod_tabela_registros', 
     [
-        "cabecalhos" => ['ID', 'Título', 'Inicio previsto', 'Inicio real', 'Término previsto', 'Termino real', 'Situação', 'Projeto'],
+        "cabecalhos" => ['ID', 'Título da Atividade', 'Inicio previsto', 'Inicio real', 'Término previsto', 'Termino real', 'Situação', 'Projeto'],
         'id' => 'id', 
         "prefixo_rota" => 'atividades', 
         "campos" => ['id', 'titulo', 'inicio_estimado', 'inicio_real', 'termino_estimado', 'termino_real'],
+        "config" => ['table_tam_fixo' => "950px"],
         'relacionamentos' => [ ['situacao', 'descricao'], ['projeto', 'titulo'] ], //tabela, campo
     ] )
 @endsection

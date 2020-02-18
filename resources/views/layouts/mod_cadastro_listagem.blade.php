@@ -34,6 +34,7 @@
             <a href= "/@yield('prefixo_rota')/create" class="btn btn-sm btn-primary mb-2" role="button">Novo Registro</a>
         @endif
         
+        {{-- <div class="card"  style="min-width: 1000px"  > --}}
         <div class="card">
             <div class="header-adicionais">
                 @hasSection ('header-adicionais')
