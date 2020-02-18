@@ -45,7 +45,7 @@ class ControllerGrupo extends Controller
      */
     public function save(Request $request, Int $id = 0, $addnew=false)
     {
-        $strValidacao['descricao'] = 'required|max:60|unique:situacoes,descricao,' . ($id>0?$id:'');
+        $strValidacao['descricao'] = 'required|max:60|unique:grupos,descricao,' . ($id>0?$id:'');
         $validacoes = $request->validate( $strValidacao );
 
         # se não tem um id > 0 então é um um novo registro

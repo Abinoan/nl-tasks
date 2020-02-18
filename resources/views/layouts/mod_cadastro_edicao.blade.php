@@ -23,6 +23,6 @@
         </form>
 
         <button type="submit" class="btn btn-primary" form="frmcadastro">Gravar</button>
-        <button type="cancel" onclick="history.go(-1)" class="btn btn-info">Voltar</button>            
+        <button type="submit" form="frmcadastro"  formmethod="GET" formaction="/@yield('prefixo-rota')/" class="btn btn-info">Voltar</button>            
 </div>      
 @stop

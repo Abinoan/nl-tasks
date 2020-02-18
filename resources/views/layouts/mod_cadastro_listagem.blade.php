@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
 
-        <div class="text-center mt-2 mb-4">
-            <h5 class="form-header mt-2"> @Yield('title', 'Nenhum título informado')</h4>
+        <div class="text-center mb-3">
+            <h5 class="form-header"> @Yield('title', 'Nenhum título informado')</h4>
         </div>
 
         <div class="card">
@@ -16,21 +16,22 @@
                 </div>    
             </div>
 
-            <form action="/@yield('prefixo_rota')"  method="GET" class="form collapse show" id="form-filtro">
+            <form action="/@yield('prefixo_rota')"  method="GET" class="form collapse" id="form-filtro">
                 <div class="card-header form-group d-flex">
                     @hasSection ('filtros-busca')
                         @yield('filtros-busca')
                     @else
-                        <input type="search" name="busca_padrao" id="busca_padrao" class="form-control" placeholder="Texto a localizar" autofocus>
+                        <input type="search" name="busca_padrao" id="busca_padrao" class="form-control mt-2" placeholder="Texto a localizar..." autofocus>
                     @endif
-
-                    <input type="submit" value="Pesquisar" class="btn btn-primary ml-2">
+                    <div class="d-flex">
+                        <input type="submit" value="Pesquisar" class="btn btn-primary my-2 mx-3" >
+                    </div>
                 </div>
             </form>    
         </div>
         
         @hasSection ('prefixo_rota')
-            <a href= "/@yield('prefixo_rota')/create" class="btn btn-sm btn-primary mb-4" role="button">Novo Registro</a>
+            <a href= "/@yield('prefixo_rota')/create" class="btn btn-sm btn-primary mb-2" role="button">Novo Registro</a>
         @endif
         
         <div class="card">

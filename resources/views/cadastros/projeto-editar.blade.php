@@ -13,7 +13,7 @@
         <label for="ftitulo" class="control-label">Título</label>
         <input 
             type="text" autofocus class="form-control" id="idtitulo" name="titulo" 
-            placeholder="Título do Projeto" value = "{{$registro->titulo}}" 
+            placeholder="Título do Projeto" value = "{{ old('titulo', $registro->titulo) }}" 
             required maxlength="60"
         >
     </div>
@@ -24,7 +24,7 @@
             @foreach ($grupos as $grupo)
                 <option 
                     value="{{$grupo->id}}"
-                    @if ($grupo->id == $registro->grupo_id)
+                    @if ($grupo->id == old('grupo_id', $registro->grupo_id) )   
                         selected
                     @endif                
                 >{{$grupo->descricao}}</option>
@@ -38,7 +38,7 @@
             <textarea 
                 class="form-control" id="iddescricao" name="descricao" rows="3"
                 maxlength="255" placeholder="Detalhes do objetivo do projeto"
-            >{{$registro->descricao}}</textarea>
+            >{{ old('descricao', $registro->descricao) }}</textarea>
         </div>
     </div>                   
 @stop
